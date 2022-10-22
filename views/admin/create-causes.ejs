@@ -1,0 +1,219 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+        <meta name="author" content="DynamicLayers">
+       
+        <title>CHIGARI-ABOUT</title>
+        
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+        <!-- Font Awesome Icons CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Themify Icons CSS -->
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <!-- Elegant Font Icons CSS -->
+        <link rel="stylesheet" href="css/elegant-font-icons.css">
+        <!-- Elegant Line Icons CSS -->
+        <link rel="stylesheet" href="css/elegant-line-icons.css">
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Venobox CSS -->
+        <link rel="stylesheet" href="css/venobox/venobox.css">
+		<!-- OWL-Carousel CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="css/slicknav.min.css">
+        <!-- Css Animation CSS -->
+        <link rel="stylesheet" href="css/css-animation.min.css">
+        <!-- Nivo Slider CSS -->
+        <link rel="stylesheet" href="css/nivo-slider.css">
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- Responsive CSS -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="site-preloader-wrap">
+            <div class="spinner"></div>
+        </div><!-- Preloader -->
+        <%- include ('admin-partials/admin-header.ejs') %><!-- /Header Section -->
+        <div class="header-height"></div>
+       
+
+        <section class="about-section bd-bottom shape circle padding">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                            <div class="contact-form">
+                                    <h3 class="text-center">CREATE CAUSE</h3>
+                                    
+                                    <form  id="cause_form" class="form-horizontal" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            
+                                                <input type="file" id="image" name="image" class="form-control" placeholder="Image" required>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                                
+                                                    <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                    
+                                                        <input type="number" id="nAmount" name="nAmount" class="form-control" placeholder="Amount Needed" required>
+                                                    
+                                                </div>
+
+                                                <div class="form-group">
+                                                        
+                                                            <input type="number" id="rAmount" name="rAmount" class="form-control" placeholder="Amount Raised" required>
+                                                        
+                                                    </div>
+
+
+                                                   
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <textarea id="content" name="message" cols="30" rows="5" class="form-control message" placeholder="Cause Content" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <button id="submit" class="btn btn-md form-control" style="background-color: #023020; color: white">CREATE CAUSE</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+                
+        </section><!-- /Team Section -->
+        
+       
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                     
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h4 class="text-center text-success">Cause has successfully been added!</h4>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                        
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <h4 class="text-center text-danger">Error adding cause, try again!</h4>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+       
+
+        <%- include ('admin-partials/admin-footer.ejs') %>
+	
+		<!-- jQuery Lib -->
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<!-- Tether JS -->
+		<script src="js/vendor/tether.min.js"></script>
+        <!-- Imagesloaded JS -->
+        <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+		<!-- OWL-Carousel JS -->
+		<script src="js/vendor/owl.carousel.min.js"></script>
+		<!-- isotope JS -->
+		<script src="js/vendor/jquery.isotope.v3.0.2.js"></script>
+		<!-- Smooth Scroll JS -->
+		<script src="js/vendor/smooth-scroll.min.js"></script>
+		<!-- venobox JS -->
+		<script src="js/vendor/venobox.min.js"></script>
+        <!-- ajaxchimp JS -->
+        <script src="js/vendor/jquery.ajaxchimp.min.js"></script>
+        <!-- Counterup JS -->
+		<script src="js/vendor/jquery.counterup.min.js"></script>
+        <!-- waypoints js -->
+		<script src="js/vendor/jquery.waypoints.v2.0.3.min.js"></script>
+        <!-- Slick Nav JS -->
+        <script src="js/vendor/jquery.slicknav.min.js"></script>
+        <!-- Nivo Slider JS -->
+        <script src="js/vendor/jquery.nivo.slider.pack.js"></script>
+        <!-- Letter Animation JS -->
+		<script src="js/vendor/letteranimation.min.js"></script>
+        <!-- Wow JS -->
+		<script src="js/vendor/wow.min.js"></script>
+		<!-- Contact JS -->
+		<script src="js/contact.js"></script>
+		<!-- Main JS -->
+        <script src="js/main.js"></script>
+        
+        <script>
+        $('#submit').on('click', (e)=>{
+    e.preventDefault();
+    const data = new FormData();
+    const image = $('#image')[0].files[0]
+    const nAmount = $('#nAmount').val()
+    const rAmount = $('#rAmount').val()
+    const title = $('#title').val()
+    const content = $('#content').val()
+    console.log()
+    data.append("image", image);
+    data.append("nAmount", nAmount);
+    data.append("rAmount", rAmount);
+    data.append("title", title);
+    data.append("content", content);
+   
+    console.log(data)
+    $.ajax({
+      url: '/create-cause/',
+      method: 'POST',
+      data: data,
+      contentType: false,
+      processData: false,
+      success: (response)=>{
+        if (response.success === true){
+            $('#successModal').modal('show')
+            $('#image').val('')
+            $('#nAmount').val('')
+            $('#rAmount').val('')
+            $('#title').val('')
+            $('#content').val('')
+          }
+          else{
+            $('#errorModal').modal('show')   
+          }
+      }
+  })
+})
+        </script>
+
+    </body>
+</html>

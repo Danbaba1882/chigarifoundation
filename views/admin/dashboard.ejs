@@ -1,0 +1,653 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="DynamicLayers">
+
+    <title>CHIGARI-HOME</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- Font Awesome Icons CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Themify Icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Elegant Font Icons CSS -->
+    <link rel="stylesheet" href="css/elegant-font-icons.css">
+    <!-- Elegant Line Icons CSS -->
+    <link rel="stylesheet" href="css/elegant-line-icons.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Venobox CSS -->
+    <link rel="stylesheet" href="css/venobox/venobox.css">
+    <!-- OWL-Carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <!-- Slick Nav CSS -->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+    <!-- Css Animation CSS -->
+    <link rel="stylesheet" href="css/css-animation.min.css">
+    <!-- Nivo Slider CSS -->
+    <link rel="stylesheet" href="css/nivo-slider.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="table/assets/extra-libs/multicheck/multicheck.css">
+    <link href="table/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="table/dist/css/style.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="site-preloader-wrap">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader -->
+
+    <!-- /Header Section -->
+
+    <%- include ('admin-partials/admin-header.ejs') %>
+
+        <div class="header-height"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Board of Trustess</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <%for (var i =0; i<profile.length; i++){%>
+                                            <%if(profile[i].membershipType == "Board of Trustees"){%>
+                                                <tr>
+
+
+                                                    <td>
+                                                        <%=profile[i].name%>
+                                                    </td>
+                                                    <td>
+                                                        <%=profile[i].position%>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/edit-profile/<%=profile[i]._id%>">
+                                                            <button class="btn btn-md btn-primary">
+                                                                <i class="fas fa-edit"></i> Edit</button>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)">
+                                                            <button class="btn btn-md btn-danger deleteTrustee" id="" data-id="<%=profile[i]._id%>">
+                                                                <i class="fas fa-archive"></i> Delete</button>
+                                                        </a>
+                                                    </td>
+
+
+
+                                                </tr>
+                                                <%}%>
+                                                    <%}%>
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Team</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<profile.length; i++){%>
+
+                                            <%if(profile[i].membershipType == "Our Team"){%>
+                                                <tr>
+                                                    <td>
+                                                        <%=profile[i].name%>
+                                                    </td>
+                                                    <td>
+                                                        <%=profile[i].position%>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/edit-profile/<%=profile[i]._id%>">
+                                                            <button class="btn btn-md btn-primary">
+                                                                <i class="fas fa-edit"></i> Edit</button>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)">
+                                                            <button class="btn btn-md btn-danger deleteTeam" id="" data-id="<%=profile[i]._id%>">
+                                                                <i class="fas fa-archive"></i> Delete</button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <%}%>
+                                                    <%}%>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Programme Team</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<profile.length; i++){%>
+                                            <%if(profile[i].membershipType == "The Programme Team"){%>
+                                                <tr>
+
+
+
+
+                                                    <td>
+                                                        <%=profile[i].name%>
+                                                    </td>
+                                                    <td>
+                                                        <%=profile[i].position%>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/edit-profile/<%=profile[i]._id%>">
+                                                            <button class="btn btn-md btn-primary">
+                                                                <i class="fas fa-edit"></i> Edit</button>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)">
+                                                            <button class="btn btn-md btn-danger deletePteam" id="" data-id="<%=profile[i]._id%>">
+                                                                <i class="fas fa-archive"></i> Delete</button>
+                                                        </a>
+                                                    </td>
+
+
+                                                </tr>
+                                                <%}%>
+                                                    <%}%>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Causes</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<cause.length; i++){%>
+
+                                            <tr>
+                                                <td>
+                                                    <%=cause[i].title%>
+                                                </td>
+                                                <td>
+                                                    <a href="/edit-cause/<%=cause[i]._id%>">
+                                                        <button class="btn btn-md btn-primary">
+                                                            <i class="fas fa-edit"></i> Edit</button>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <button class="btn btn-md btn-danger deleteCause" id="" data-id="<%=cause[i]._id%>">
+                                                            <i class="fas fa-archive"></i> Delete</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%}%>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Events</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<event.length; i++){%>
+                                            <tr>
+
+                                                <td>
+                                                    <%=event[i].title%>
+                                                </td>
+                                                <td>
+                                                    <a href="/edit-event/<%=event[i]._id%>">
+                                                        <button class="btn btn-md btn-primary">
+                                                            <i class="fas fa-edit"></i> Edit</button>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <button class="btn btn-md btn-danger deleteEvent" id="" data-id="<%=event[i]._id%>">
+                                                            <i class="fas fa-archive"></i> Delete</button>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                            <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">News</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<news.length; i++){%>
+                                            <tr>
+                                                <td>
+                                                    <%=news[i].title%>
+                                                </td>
+                                                <td>
+                                                    <a href="/edit-news/<%=news[i]._id%>">
+                                                        <button class="btn btn-md btn-primary">
+                                                            <i class="fas fa-edit"></i> Edit</button>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <button class="btn btn-md btn-danger deleteNews" id="" data-id="<%=news[i]._id%>">
+                                                            <i class="fas fa-archive"></i> Delete</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Partners</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config">
+                                    <thead>
+                                        <tr>
+                                            <th>Website Link</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%for (var i =0; i<partner.length; i++){%>
+                                            <tr>
+                                                <td>
+                                                    <%=partner[i].sitelink%>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <button class="btn btn-md btn-danger deletePartner" id="" data-id="<%=partner[i]._id%>">
+                                                            <i class="fas fa-archive"></i> Delete</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Gallery</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero_config" id="zero_configgg">
+                                    <thead>
+                                        <tr>
+                                            <th>Picture</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%gallery.forEach((gallery)=>{%>
+                                            <tr>
+                                                <td>
+                                                    <img src="<%=gallery.image%>" alt="" width="50px" height="50px"> </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <button class="btn btn-md btn-danger deleteGallery" id="" data-id="<%=gallery._id%>">
+                                                            <i class="fas fa-archive"></i> Delete</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%})%>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center text-success">Delete Successful!</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center text-danger">Error deleting, try again!</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <%- include ('admin-partials/admin-footer.ejs') %>
+
+            <!-- jQuery Lib -->
+            <script src="js/vendor/jquery-1.12.4.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="js/vendor/bootstrap.min.js"></script>
+            <!-- Tether JS -->
+            <script src="js/vendor/tether.min.js"></script>
+            <!-- Imagesloaded JS -->
+            <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+            <!-- OWL-Carousel JS -->
+            <script src="js/vendor/owl.carousel.min.js"></script>
+            <!-- isotope JS -->
+            <script src="js/vendor/jquery.isotope.v3.0.2.js"></script>
+            <!-- Smooth Scroll JS -->
+            <script src="js/vendor/smooth-scroll.min.js"></script>
+            <!-- venobox JS -->
+            <script src="js/vendor/venobox.min.js"></script>
+            <!-- ajaxchimp JS -->
+            <script src="js/vendor/jquery.ajaxchimp.min.js"></script>
+            <!-- Counterup JS -->
+            <script src="js/vendor/jquery.counterup.min.js"></script>
+            <!-- waypoints js -->
+            <script src="js/vendor/jquery.waypoints.v2.0.3.min.js"></script>
+            <!-- Slick Nav JS -->
+            <script src="js/vendor/jquery.slicknav.min.js"></script>
+            <!-- Nivo Slider JS -->
+            <script src="js/vendor/jquery.nivo.slider.pack.js"></script>
+            <!-- Letter Animation JS -->
+            <script src="js/vendor/letteranimation.min.js"></script>
+            <!-- Wow JS -->
+            <script src="js/vendor/wow.min.js"></script>
+            <!-- Contact JS -->
+            <script src="js/contact.js"></script>
+            <!-- Main JS -->
+            <script src="js/main.js"></script>
+            <script src="table/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+            <script src="table/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+            <script src="table/assets/extra-libs/sparkline/sparkline.js"></script>
+            <!--Wave Effects -->
+            <script src="table/dist/js/waves.js"></script>
+            <!--Menu sidebar -->
+            <script src="table/dist/js/sidebarmenu.js"></script>
+            <!--Custom JavaScript -->
+            <script src="table/dist/js/custom.min.js"></script>
+            <!-- this page js -->
+            <script src="table/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+            <script src="table/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+            <script src="table/assets/extra-libs/DataTables/datatables.min.js"></script>
+            <script>
+                /****************************************
+                 *       Basic Table                   *
+                 ****************************************/
+                $('.zero_config').DataTable();
+                $('#zero_configgg').DataTable();
+            </script>
+
+            <script>
+                $('.deleteTrustee').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteTrustee").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-profile/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deleteTeam').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteTeam").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-profile/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deletePteam').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deletePteam").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-profile/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deleteEvent').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteEvent").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-event/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deleteNews').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteNews").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-news/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deleteCause').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteCause").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-cause/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deletePartner').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deletePartner").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-partner/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+
+                $('.deleteGallery').on('click', (e) => {
+                    e.preventDefault();
+                    var id = $(".deleteGallery").attr("data-id");
+                    console.log(id)
+                    $.ajax({
+                        url: '/delete-picture/' + id,
+                        method: 'POST',
+                        data: JSON.stringify(id),
+                        success: (response) => {
+                            if (response.success === true) {
+                                $('#successModal').modal('show')
+                            }
+                            else {
+                                $('#errorModal').modal('show')
+                            }
+                        }
+                    })
+                })
+            </script>
+</body>
+
+</html>
