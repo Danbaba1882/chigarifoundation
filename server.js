@@ -932,5 +932,5 @@ chigari.get('/edit-news/:id', async (req, res) => {
     const news = await News.findOne({ _id: req.params.id })
     res.render('admin/edit-news', { news: news })
 })
-chigari.listen(process.env.PORT || 7000)
+chigari.listen(process.env.PORT || 2000)
 console.log('server is listening at port 7000');
