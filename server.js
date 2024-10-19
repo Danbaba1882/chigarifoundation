@@ -66,7 +66,7 @@ chigari.get('/admin-dashboard', async (req, res) => {
     const news = await News.find({})
     const gallery = await Gallery.find({})
     const partner = await Partner.find({})
-    console.log(cause, profile, event, news, gallery, partner)
+    // console.log(cause, profile, event, news, gallery, partner)
     res.render('admin/dashboard', {
         news: news, event: event,
         profile: profile, cause: cause, gallery: gallery,
@@ -76,6 +76,10 @@ chigari.get('/admin-dashboard', async (req, res) => {
 
 chigari.get('/page-not-found', async (req, res) => {
     res.render('404')
+})
+
+chigari.get('/operation/think-cell', async (req, res) => {
+    res.render('think')
 })
 
 chigari.get('/about', async (req, res) => {

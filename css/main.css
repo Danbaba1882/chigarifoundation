@@ -1268,6 +1268,18 @@ a,a:hover, .overlay, img, .form-control,  .form-control:hover, button{
     display: flex;
     align-items: center;
 }
+
+.pager-headerr{
+    background-image: url(../PICS/tnkc.svg) !important;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
 .pager-header h2{
     color: #fff;
     font-size: 42px;
