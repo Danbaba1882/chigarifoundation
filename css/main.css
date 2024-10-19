@@ -2059,3 +2059,7 @@ span.date{
     background-color: #ffb451;
     color: #fff;
 }
+
+.hidden-m {
+    display: none !important;
+}
